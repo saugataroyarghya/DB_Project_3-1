@@ -33,7 +33,7 @@ CREATE TABLE patient(
     patient_city varchar(10),
     primary key(patient_id),
     foreign key(doctor_id) references doctor(doctor_id),
-    foreign key(disease_id) refernces disease
+    foreign key(disease_id) refernces disease(disease_id)
 (disease_id)
 );
 
