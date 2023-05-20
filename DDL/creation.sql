@@ -1,4 +1,11 @@
-Create table disease
+DROP TABLE IF EXISTS patient;
+DROP TABLE IF EXISTS doctor;
+DROP TABLE IF EXISTS disease;
+DROP TABLE IF EXISTS hospital;
+DROP TABLE IF EXISTS employ;
+DROP TABLE IF EXISTS medicine;
+
+CREATE TABLE disease
 (
     disease_id number(20),
     disease_name varchar(30),
@@ -6,7 +13,7 @@ Create table disease
     primary key(disease_id)
 );
 
-Create table doctor
+CREATE TABLE doctor
 (
     doctor_id number(20),
     disease_id number(20),
@@ -17,7 +24,7 @@ Create table doctor
     foreign key(disease_id) references disease(disease_id)
 );
 
-Create table patient(
+CREATE TABLE patient(
     patient_id number(20),
     doctor_id number(20),
     disease_id number(20),
@@ -30,7 +37,7 @@ Create table patient(
 (disease_id)
 );
 
-Create table hospital
+CREATE TABLE hospital
 (
     hospital_id number(20),
     hospital_name varchar(30),
@@ -39,7 +46,7 @@ Create table hospital
     primary key(hospital_id)
 );
 
-Create table employ
+CREATE TABLE employ
 (
     doctor_id number(20),
     hospital_id number(20),
@@ -48,7 +55,7 @@ Create table employ
     foreign key(hospital_id) references hospital(hospital_id)
 );
 
-Create table medicine
+CREATE TABLE medicine
 (
     medicine_id number(20),
     medicine_name varchar(30),
